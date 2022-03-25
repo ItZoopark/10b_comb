@@ -27,4 +27,20 @@ def pol_4199():
     print(count)
 
 
-pol_4199()
+# pol_4199()
+def pol_4198():
+    sogl = 'КРШ'
+    count = 0
+    for r in range(3, 6):
+        for i in itertools.product('КРЫША', repeat=r):
+            word = ''.join(i)
+            if word.count('Ы') <= 2 and word.count('А') <= 2 \
+                    and word.count('К') <= 1 and word.count('Р') <= 1 and word.count('Ш') <= 1:
+                if len(set(word) & set(sogl)) == 1 and word[0] in sogl or \
+                        len(set(word[1:]) & set(sogl)) == 0:
+                    print(word)
+                    count += 1
+    print(count)
+
+
+pol_4198()
