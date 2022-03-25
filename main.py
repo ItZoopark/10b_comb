@@ -43,4 +43,21 @@ def pol_4198():
     print(count)
 
 
-pol_4198()
+# pol_4198()
+# ДЗ ---------------------------------------
+def pol_1901():
+    alpha16 = '0123456789ABCDEF'
+    evens = '02468'
+    odds = '13579'
+    count = 0
+    for i in itertools.product(alpha16, repeat=3):
+        word = ''.join(i)
+        if len(set(word)) == len(word):
+            if word[0] != '0' and (word[0] in evens and word[1] in odds and word[2] in evens or \
+                                   word[0] in odds and word[1] in evens and word[2] in odds):
+                print(word)
+                count += 1
+    print(count)
+
+
+pol_1901()
